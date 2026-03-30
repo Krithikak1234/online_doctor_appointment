@@ -1,9 +1,13 @@
-# online_doctor_appointment
-Project Link:
-https://github.com/Krithikak1234/online_doctor_appointment
-##Team Members
+# Online Doctor Appointment System
 
--Kavyashree
--Navya
--Nithya
--K Krithika
+## Project Link
+
+https://krithikak1234.github.io/online_doctor_appointment
+
+## Team Members
+
+* Kavyashree
+* Navya
+* Nithya
+* K Krithika
+
