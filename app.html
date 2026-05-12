@@ -8,20 +8,23 @@
 
     <h1>Doctor Appointment Booking</h1>
 
-    <form>
+    <form id="appointmentForm">
 
         <input type="text"
+               id="patientName"
                placeholder="Patient Name"
                required>
 
         <br><br>
 
         <input type="date"
+               id="appointmentDate"
                required>
 
         <br><br>
 
         <input type="time"
+               id="appointmentTime"
                required>
 
         <br><br>
@@ -31,6 +34,32 @@
         </button>
 
     </form>
+
+    <script>
+
+        document.getElementById("appointmentForm")
+        .addEventListener("submit", function(e) {
+
+            e.preventDefault();
+
+            let patientName =
+                document.getElementById("patientName").value;
+
+            let appointmentDate =
+                document.getElementById("appointmentDate").value;
+
+            let appointmentTime =
+                document.getElementById("appointmentTime").value;
+
+            localStorage.setItem("patientName", patientName);
+            localStorage.setItem("appointmentDate", appointmentDate);
+            localStorage.setItem("appointmentTime", appointmentTime);
+
+            alert("Appointment Booked Successfully!");
+
+        });
+
+    </script>
 
 </body>
 </html>
