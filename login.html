@@ -1,86 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Doctor Appointment Login</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f6fc;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .login-container {
-            background: #ffffff;
-            padding: 30px;
-            border-radius: 10px;
-            width: 350px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-
-        h2 {
-            margin-bottom: 20px;
-        }
-
-        input {
-            width: 100%;
-            padding: 10px;
-            margin: 8px 0;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-
-        button {
-            width: 100%;
-            padding: 10px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-
-        .register-link {
-            margin-top: 15px;
-            display: block;
-            font-size: 14px;
-        }
-
-        .register-link a {
-            color: #007BFF;
-            text-decoration: none;
-        }
-
-        .register-link a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <title>Login</title>
 </head>
+
 <body>
 
-<div class="login-container">
-    <h2>Login</h2>
+    <h2>User Login</h2>
 
-    <form>
-        <input type="text" placeholder="Name" required>
-        <input type="email" placeholder="Email" required>
-        <input type="password" placeholder="Password" required>
+    <form id="loginForm">
+
+        <input type="text"
+               id="loginUsername"
+               placeholder="Enter Username"
+               required>
+
+        <br><br>
+
+        <input type="password"
+               id="loginPassword"
+               placeholder="Enter Password"
+               required>
+
+        <br><br>
 
         <button type="submit">Login</button>
+
     </form>
 
-    <div class="register-link">
-        Not registered? <a href="#">Register here</a>
-    </div>
-</div>
+    <script>
+
+        document.getElementById("loginForm")
+        .addEventListener("submit", function(e) {
+
+            e.preventDefault();
+
+            let storedUsername =
+                localStorage.getItem("username");
+
+            let storedPassword =
+                localStorage.getItem("password");
+
+            let loginUsername =
+                document.getElementById("loginUsername").value;
+
+            let loginPassword =
+                document.getElementById("loginPassword").value;
+
+            if (loginUsername === storedUsername &&
+                loginPassword === storedPassword) {
+
+                alert("Login Successful!");
+
+                window.location.href = "app.html";
+
+            } else {
+
+                alert("Invalid Username or Password");
+            }
+        });
+
+    </script>
 
 </body>
 </html>
