@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Doctor Appointment</title>
 </head>
@@ -37,23 +38,25 @@
 
     <script>
 
-        document.getElementById("appointmentForm")
-        .addEventListener("submit", function(e) {
+        const form =
+            document.getElementById("appointmentForm");
 
-            e.preventDefault();
+        form.addEventListener("submit", function(event) {
 
-            let patientName =
+            event.preventDefault();
+
+            const patient =
                 document.getElementById("patientName").value;
 
-            let appointmentDate =
+            const date =
                 document.getElementById("appointmentDate").value;
 
-            let appointmentTime =
+            const time =
                 document.getElementById("appointmentTime").value;
 
-            localStorage.setItem("patientName", patientName);
-            localStorage.setItem("appointmentDate", appointmentDate);
-            localStorage.setItem("appointmentTime", appointmentTime);
+            localStorage.setItem("patient", patient);
+            localStorage.setItem("date", date);
+            localStorage.setItem("time", time);
 
             alert("Appointment Booked Successfully!");
 
@@ -62,4 +65,5 @@
     </script>
 
 </body>
+
 </html>
